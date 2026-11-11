@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif;
+
+  --color-bg-main: #101010;
+  --color-bg-secondary: #151515;
+  --color-surface-card: #1B1B1B;
+  --color-surface-elevated: #222222;
+
+  --color-accent-primary: #C6F36B;
+  --color-accent-secondary: #FF895D;
+  --color-accent-tertiary: #A78BFA;
+
+  --color-text-main: #F5F5F0;
+  --color-text-muted: #969696;
+  --color-border-sharp: #383838;
+}
+
+:root {
+  color-scheme: dark;
+  --bg-main: #101010;
+  --bg-secondary: #151515;
+  --surface-card: #1B1B1B;
+  --surface-elevated: #222222;
+  --accent-primary: #C6F36B;
+  --accent-secondary: #FF895D;
+  --accent-tertiary: #A78BFA;
+  --text-main: #F5F5F0;
+  --text-muted: #969696;
+  --border-sharp: #383838;
+}
+
+html,
+body {
+  background-color: #101010;
+  color: #F5F5F0;
+  font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6, .font-display {
+  font-family: var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif;
+}
+
+/* Neo-brutalist tactile focus & selection */
+::selection {
+  background-color: #C6F36B;
+  color: #101010;
+}
+
+*:focus-visible {
+  outline: 2px solid #C6F36B;
+  outline-offset: 2px;
+}
+
+/* Subtle structural grid utility */
+.bg-editorial-grid {
+  background-image:
+    linear-gradient(to right, rgba(56, 56, 56, 0.28) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(56, 56, 56, 0.28) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+.brutal-shadow {
+  box-shadow: 4px 4px 0px #383838;
+}
+
+.brutal-shadow-accent {
+  box-shadow: 4px 4px 0px #C6F36B;
+}
+
+.brutal-shadow-sm {
+  box-shadow: 2px 2px 0px #383838;
+}
+

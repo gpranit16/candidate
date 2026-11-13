@@ -24,7 +24,7 @@ export function createApp() {
 
   app.use(
     cors({
-      origin(origin, callback) {
+      origin(origin: string | undefined, callback: (err: Error | null, allow?: boolean) => void) {
         if (!origin) {
           return callback(null, true);
         }
@@ -39,7 +39,7 @@ export function createApp() {
     })
   );
 
-  app.get(['/health', '/api/health-check'], (_req, res) => {
+  app.get(['/health', '/api/health-check'], (_req: express.Request, res: express.Response) => {
     res.status(200).json({
       status: 'ok',
       service: 'jobs-territory-backend',
@@ -63,7 +63,7 @@ export function createApp() {
   app.use(sanitizeInput);
   app.use('/api', csrfOriginProtection);
 
-  app.get('/', (_req, res) => {
+  app.get('/', (_req: express.Request, res: express.Response) => {
     res.status(200).json({
       service: 'Jobs Territory Candidate Portal API',
       health: '/api/health',

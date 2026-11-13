@@ -121,7 +121,22 @@ export async function updateCandidateProfile(
   };
 }
 
-export async function uploadCandidateResume(userId: string, file: Express.Multer.File) {
+export interface ResumeUploadFile {
+  fieldname?: string;
+  originalname: string;
+  encoding?: string;
+  mimetype: string;
+  size: number;
+  buffer: Buffer;
+  destination?: string;
+  filename?: string;
+  path?: string;
+}
+
+export async function uploadCandidateResume(
+  userId: string,
+  file: Express.Multer.File | ResumeUploadFile
+) {
   const ext = path.extname(file.originalname || '').toLowerCase();
   if (!validateResumeMagicBytes(file.buffer, ext)) {
     throw new AppError(

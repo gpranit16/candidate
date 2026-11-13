@@ -25,7 +25,7 @@ export function csrfOriginProtection(req: Request, _res: Response, next: NextFun
   }
 
   if (referer) {
-    const matchesAllowed = env.clientUrls.some((allowed) => referer.startsWith(allowed));
+    const matchesAllowed = env.clientUrls.some((allowed: string) => referer.startsWith(allowed));
     if (!matchesAllowed) {
       return next(new AppError('Referer blocked by CSRF policy.', 403, 'CSRF_BLOCKED'));
     }

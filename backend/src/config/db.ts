@@ -16,7 +16,7 @@ export async function connectDB(uriOverride?: string): Promise<typeof mongoose> 
   const conn = await mongoose.connect(uri, {
     dbName: env.dbName,
     autoIndex: true,
-  });
+  } as mongoose.ConnectOptions);
 
   if (conn.connection.name !== env.dbName) {
     throw new Error(`Connected to unexpected database "${conn.connection.name}". Expected "${env.dbName}".`);

@@ -81,7 +81,7 @@ export async function listPublishedJobs(filters: JobSearchFilters) {
       .map((job) => {
         let score = 0;
         if (job.title.toLowerCase().includes(lowerKw)) score += 10;
-        if (job.skills.some((s) => s.toLowerCase().includes(lowerKw))) score += 6;
+        if (job.skills && Array.isArray(job.skills) && job.skills.some((s: string) => s.toLowerCase().includes(lowerKw))) score += 6;
         if (job.company.toLowerCase().includes(lowerKw)) score += 5;
         if (job.category.toLowerCase().includes(lowerKw)) score += 4;
         if (job.description.toLowerCase().includes(lowerKw)) score += 1;

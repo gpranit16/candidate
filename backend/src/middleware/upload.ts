@@ -17,7 +17,7 @@ export const resumeUpload = multer({
     fileSize: MAX_RESUME_SIZE_BYTES,
     files: 1,
   },
-  fileFilter(_req, file, cb) {
+  fileFilter(_req: any, file: any, cb: any) {
     const ext = path.extname(file.originalname || '').toLowerCase();
     if (!ALLOWED_EXTENSIONS.has(ext) || !ALLOWED_MIME_TYPES.has(file.mimetype)) {
       return cb(

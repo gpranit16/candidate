@@ -8,7 +8,7 @@ import adminRoutes from './adminRoutes';
 
 const router = Router();
 
-router.get('/health', (_req, res) => {
+router.get('/health', (_req: any, res: any) => {
   const readyState = mongoose.connection.readyState;
   const states: Record<number, string> = {
     0: 'disconnected',

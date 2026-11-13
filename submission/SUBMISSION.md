@@ -27,3 +27,4 @@
 - **Live Server & Atlas E2E Verification:** Passed across `/api/health`, all 14 frontend routes, job search, candidate registration, GridFS resume upload, application submission, duplicate guard, and admin status progression.
 - **TypeScript, ESLint & Production Builds:** Passed with 0 errors on both `backend/` and `frontend/`.
 - **Note:** Automated Chrome DevTools browser click-through was blocked locally because Chrome remote debugging (`DevToolsActivePort`) was unavailable.
+

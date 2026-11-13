@@ -9,3 +9,4 @@ Place desktop and mobile UI screenshots captured from the live deployed or local
 - `06-application-tracker.png`
 - `07-admin-console.png`
 - `08-mobile-jobs-filters.png`
+

@@ -39,6 +39,15 @@ export function createApp() {
     })
   );
 
+  app.get(['/health', '/api/health-check'], (_req, res) => {
+    res.status(200).json({
+      status: 'ok',
+      service: 'jobs-territory-backend',
+      uptime: process.uptime(),
+      timestamp: new Date().toISOString(),
+    });
+  });
+
   const apiLimiter = rateLimit({
     windowMs: 15 * 60 * 1000,
     max: env.isTest ? 5000 : 300,

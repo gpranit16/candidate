@@ -22,3 +22,4 @@ Thank you for the opportunity.
 
 Best regards,
 [Candidate Name]
+

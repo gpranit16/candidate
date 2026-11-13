@@ -63,3 +63,4 @@ Executed against live servers (`http://localhost:3000` and `http://localhost:500
 ## 4. Known Unexecuted Check
 
 - **Interactive Headless Chrome DevTools Walkthrough:** Attempted via Chrome DevTools MCP (`browser` subagent), but could not connect because Chrome remote debugging (`DevToolsActivePort`) was not active on the host environment. Interactive visual inspection in a live browser remains recommended after deployment or when Chrome remote debugging is enabled.
+
